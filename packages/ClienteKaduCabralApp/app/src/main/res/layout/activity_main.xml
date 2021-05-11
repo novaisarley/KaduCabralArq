@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="40dp"
+    android:orientation="vertical"
+    tools:context=".view.MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="13sp"
+        android:text="Saldo Disponível"/>
+
+    <TextView
+        android:id="@+id/activity_main_tv_balance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="32sp"
+        tools:text="R$ 350,00"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="10"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center_vertical"
+            android:layout_weight="2"
+            android:textSize="16sp"
+            android:layout_marginEnd="10dp"
+            android:text="Compartilhe com seus amigos e ganhe até R$350,00"/>
+
+        <Button
+            android:id="@+id/activity_main_bt_share"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_weight="8"
+            android:text="Ir"
+            android:background="@drawable/round_bg"
+            android:backgroundTint="#ddd"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="10dp"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="00dp"
+        android:background="@drawable/round_bg"
+        android:backgroundTint="@color/colorPrimary">
+
+        <TextView
+            android:id="@+id/activity_main_tv_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center_vertical"
+            android:layout_weight="2"
+            android:textSize="18sp"
+            android:layout_marginEnd="10dp"
+            android:textStyle="bold"
+            android:textColor="#504B4B"
+            tools:text="5592991939930"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center_vertical"
+            android:layout_weight="2"
+            android:textSize="12sp"
+            android:layout_marginEnd="10dp"
+            android:text="Meu código de convite"/>
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

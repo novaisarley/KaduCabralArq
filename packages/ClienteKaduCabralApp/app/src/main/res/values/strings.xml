@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ClienteKaduCabralApp</string>
+    <string name="n_o_recebeu_reenviar_c_digo"> <u>Não recebeu? Reenviar código</u> </string>
+</resources>
