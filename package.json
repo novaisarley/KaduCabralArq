@@ -1,0 +1,24 @@
+{
+  "name": "kadu-cabral-arq",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Ph-FMM/KaduCabralArq.git",
+  "author": "",
+  "license": "MIT",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "@kadu-cabral-arq/eslint-config": "*"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.23.0",
+    "prettier": "^2.3.0"
+  }
+}
