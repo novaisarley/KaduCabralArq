@@ -1,17 +1,23 @@
+import { FakeHashProvider } from '@shared/container/providers/HashProvider/fakes/FakeHashProvider';
 import { AppError } from '@shared/errors/AppError';
 
 import { FakeEmployeesRepository } from '../repositories/fakes/FakeEmployeeRepository';
 import { CreateEmployeeService } from './CreateEmployeeService';
 
 let fakeEmployeeRepository: FakeEmployeesRepository;
+let fakeHashProvider: FakeHashProvider;
 
 let createEmployee: CreateEmployeeService;
 
 describe('CreateEmployeeService', () => {
   beforeEach(() => {
     fakeEmployeeRepository = new FakeEmployeesRepository();
+    fakeHashProvider = new FakeHashProvider();
 
-    createEmployee = new CreateEmployeeService(fakeEmployeeRepository);
+    createEmployee = new CreateEmployeeService(
+      fakeEmployeeRepository,
+      fakeHashProvider,
+    );
   });
 
   it('should create a new employee', async () => {

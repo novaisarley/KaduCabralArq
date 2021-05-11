@@ -4,6 +4,7 @@ import { inject, injectable } from 'tsyringe';
 
 import { AppError } from '@shared/errors/AppError';
 
+import { IHashProvider } from '@shared/container/providers/HashProvider/models/IHashProvider';
 import { ICreateEmployeeDTO } from '../dtos/ICreateEmployeeDTO';
 import { Employee } from '../infra/typeorm/entities/Employee';
 import { IEmployeesRepository } from '../repositories/IEmployeesRepository';
@@ -13,6 +14,9 @@ export class CreateEmployeeService {
   constructor(
     @inject('EmployeesRepository')
     private employeesRepository: IEmployeesRepository,
+
+    @inject('HashProvider')
+    private hashProvider: IHashProvider,
   ) {}
 
   public async execute({
@@ -27,10 +31,12 @@ export class CreateEmployeeService {
 
     if (checkEmployeeExists) throw new AppError('Email already used');
 
+    const hashedPassword = await this.hashProvider.generateHash(password);
+
     const employee = await this.employeesRepository.create({
       name,
       email,
-      password,
+      password: hashedPassword,
       isAdmin,
     });
 
