@@ -1,3 +1,5 @@
+import { AppError } from '@shared/errors/AppError';
+
 import { FakeEmployeesRepository } from '../repositories/fakes/FakeEmployeeRepository';
 import { CreateEmployeeService } from './CreateEmployeeService';
 
@@ -39,6 +41,6 @@ describe('CreateEmployeeService', () => {
         password: '123456',
         isAdmin: false,
       }),
-    ).rejects.toBeInstanceOf(Error);
+    ).rejects.toBeInstanceOf(AppError);
   });
 });

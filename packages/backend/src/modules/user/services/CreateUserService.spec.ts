@@ -1,3 +1,5 @@
+import { AppError } from '@shared/errors/AppError';
+
 import { FakeUsersRepository } from '../repositories/fakes/FakeUsersRepository';
 import { CreateUserService } from './CreateUserService';
 
@@ -42,7 +44,7 @@ describe('CreateUserService', () => {
         cellphone: '+5588888888888',
         wallet: 0.0,
       }),
-    ).rejects.toBeInstanceOf(Error);
+    ).rejects.toBeInstanceOf(AppError);
   });
 
   it('should not be able to create a new user with an used cellphone', async () => {
@@ -62,6 +64,6 @@ describe('CreateUserService', () => {
         cellphone: '+5599999999999',
         wallet: 0.0,
       }),
-    ).rejects.toBeInstanceOf(Error);
+    ).rejects.toBeInstanceOf(AppError);
   });
 });

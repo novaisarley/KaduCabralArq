@@ -1,6 +1,7 @@
 import { Router } from 'express';
-import { CreateEmployeeService } from 'modules/employee/services/CreateEmployeeService';
-import { EmployeesRepository } from '../../typeorm/repositories/EmployeesRepository';
+
+import { CreateEmployeeService } from '@modules/employee/services/CreateEmployeeService';
+import { EmployeesRepository } from '@modules/employee/infra/typeorm/repositories/EmployeesRepository';
 
 const employeeRouter = Router();
 

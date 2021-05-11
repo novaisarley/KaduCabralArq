@@ -1,5 +1,6 @@
-import { ICreateUserDTO } from '../../dtos/ICreateUserDTO';
-import { User } from '../../infra/typeorm/entities/User';
+import { ICreateUserDTO } from '@modules/user/dtos/ICreateUserDTO';
+import { User } from '@modules/user/infra/typeorm/entities/User';
+
 import { IUsersRepository } from '../IUsersRepository';
 
 export class FakeUsersRepository implements IUsersRepository {

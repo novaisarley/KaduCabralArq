@@ -1,5 +1,6 @@
-import { ICreateEmployeeDTO } from 'modules/employee/dtos/ICreateEmployeeDTO';
-import { Employee } from '../../infra/typeorm/entities/Employee';
+import { ICreateEmployeeDTO } from '@modules/employee/dtos/ICreateEmployeeDTO';
+import { Employee } from '@modules/employee/infra/typeorm/entities/Employee';
+
 import { IEmployeesRepository } from '../IEmployeesRepository';
 
 class FakeEmployeesRepository implements IEmployeesRepository {

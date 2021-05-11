@@ -1,3 +1,5 @@
+import { AppError } from '@shared/errors/AppError';
+
 import { ICreateEmployeeDTO } from '../dtos/ICreateEmployeeDTO';
 import { Employee } from '../infra/typeorm/entities/Employee';
 import { IEmployeesRepository } from '../repositories/IEmployeesRepository';
@@ -15,7 +17,7 @@ export class CreateEmployeeService {
       email,
     );
 
-    if (checkEmployeeExists) throw new Error('Email already used');
+    if (checkEmployeeExists) throw new AppError('Email already used');
 
     const employee = await this.employeesRepository.create({
       name,

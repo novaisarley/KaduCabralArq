@@ -1,6 +1,8 @@
-import { ICreateEmployeeDTO } from 'modules/employee/dtos/ICreateEmployeeDTO';
-import { IEmployeesRepository } from 'modules/employee/repositories/IEmployeesRepository';
 import { getRepository, Repository } from 'typeorm';
+
+import { ICreateEmployeeDTO } from '@modules/employee/dtos/ICreateEmployeeDTO';
+import { IEmployeesRepository } from '@modules/employee/repositories/IEmployeesRepository';
+
 import { Employee } from '../entities/Employee';
 
 class EmployeesRepository implements IEmployeesRepository {

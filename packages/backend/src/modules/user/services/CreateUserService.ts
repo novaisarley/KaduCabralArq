@@ -1,3 +1,5 @@
+import { AppError } from '@shared/errors/AppError';
+
 import { ICreateUserDTO } from '../dtos/ICreateUserDTO';
 import { User } from '../infra/typeorm/entities/User';
 import { IUsersRepository } from '../repositories/IUsersRepository';
@@ -16,12 +18,13 @@ export class CreateUserService {
       email,
     );
 
-    if (checkUserExistsByEmail) throw new Error('Email already used');
+    if (checkUserExistsByEmail) throw new AppError('Email already used');
 
     const checkUserExistsByCellphone =
       await this.usersRepository.findByCellphone(cellphone);
 
-    if (checkUserExistsByCellphone) throw new Error('Cellphone already used');
+    if (checkUserExistsByCellphone)
+      throw new AppError('Cellphone already used');
 
     const user = await this.usersRepository.create({
       name,
