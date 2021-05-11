@@ -7,6 +7,10 @@
   "license": "MIT",
   "private": true,
   "workspaces": {
+    "nohoist": [
+      "**/typeorm/**",
+      "**/typeorm"
+    ],
     "packages": [
       "packages/*"
     ]

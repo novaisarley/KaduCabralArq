@@ -33,7 +33,7 @@ class FakeEmployeesRepository implements IEmployeesRepository {
     return employee;
   }
 
-  public async delete(): Promise<void> {}
+  // public async delete(): Promise<void> {}
 }
 
 export { FakeEmployeesRepository };

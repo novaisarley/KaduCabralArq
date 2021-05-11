@@ -31,6 +31,9 @@ export class CreateUserService {
       wallet,
     });
 
+    // @ts-expect-error Security reasons
+    delete user.password;
+
     return user;
   }
 }

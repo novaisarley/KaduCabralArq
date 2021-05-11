@@ -20,17 +20,17 @@ export class Code {
   value: string;
 
   @Column()
-  userID: string;
+  user_id: string;
 
   @OneToOne(() => User)
   @JoinColumn({ name: 'userID' })
   user: User;
 
   @CreateDateColumn()
-  createdAt: Date;
+  created_at: Date;
 
   @UpdateDateColumn()
-  updatedAt: Date;
+  updated_at: Date;
 
   constructor() {
     if (!this.id) {
