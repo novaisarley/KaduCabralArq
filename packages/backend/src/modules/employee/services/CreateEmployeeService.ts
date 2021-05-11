@@ -1,11 +1,19 @@
+import 'reflect-metadata';
+
+import { inject, injectable } from 'tsyringe';
+
 import { AppError } from '@shared/errors/AppError';
 
 import { ICreateEmployeeDTO } from '../dtos/ICreateEmployeeDTO';
 import { Employee } from '../infra/typeorm/entities/Employee';
 import { IEmployeesRepository } from '../repositories/IEmployeesRepository';
 
+@injectable()
 export class CreateEmployeeService {
-  constructor(private employeesRepository: IEmployeesRepository) {}
+  constructor(
+    @inject('EmployeesRepository')
+    private employeesRepository: IEmployeesRepository,
+  ) {}
 
   public async execute({
     name,
@@ -25,6 +33,9 @@ export class CreateEmployeeService {
       password,
       isAdmin,
     });
+
+    // @ts-expect-error Security Reason
+    delete employee.password;
 
     return employee;
   }
