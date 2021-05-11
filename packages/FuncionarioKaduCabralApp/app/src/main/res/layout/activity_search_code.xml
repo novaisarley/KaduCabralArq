@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.SearchCodeActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#6A6A6A"
+            android:textStyle="bold"
+            android:text="Digite o código" />
+
+        <EditText
+            android:id="@+id/activity_search_code_edt_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="60dp"
+            android:layout_marginTop="5dp"
+            android:hint="5592999999999"
+            android:inputType="number" />
+
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+
+            <ProgressBar
+                android:id="@+id/activity_search_code_progress_bar_code"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:visibility="gone"
+                android:layout_gravity="center"/>
+
+            <Button
+                android:id="@+id/activity_search_code_bt_search"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:paddingHorizontal="35dp"
+                android:background="@drawable/rounded_background"
+                android:backgroundTint="@color/colorPrimary"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:text="Procurar" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/activity_search_code_ib_logout"
+        android:layout_width="47dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="12dp"
+        android:scaleType="centerCrop"
+        android:padding="5dp"
+        android:background="?selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_logout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/activity_search_code_ib_adm"
+        android:layout_width="47dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:padding="5dp"
+        android:scaleType="centerCrop"
+        android:background="?selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_admin"
+        app:layout_constraintEnd_toStartOf="@+id/activity_search_code_ib_logout"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

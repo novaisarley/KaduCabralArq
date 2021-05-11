@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">FuncionarioKaduCabralApp</string>
+
+    <string-array name="tipoDeUsuario">
+        <item>Funcionário</item>
+        <item>Administrador</item>
+    </string-array>
+</resources>

@@ -1,0 +1,11 @@
+<resources>
+
+    <style name="Theme.FuncionarioKaduCabralApp.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.FuncionarioKDApplication.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.FuncionarioKDApplication.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+</resources>
