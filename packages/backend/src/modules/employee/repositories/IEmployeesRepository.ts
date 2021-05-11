@@ -1,0 +1,3 @@
+interface IEmployeesRepository {}
+
+export { IEmployeesRepository };
