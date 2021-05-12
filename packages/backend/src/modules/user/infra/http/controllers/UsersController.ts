@@ -8,16 +8,16 @@ export class UsersController {
   public async create(request: Request, response: Response): Promise<Response> {
     const { name, email, password, cellphone } = request.body;
 
-    const createEmployee = container.resolve(CreateUserService);
+    const createUser = container.resolve(CreateUserService);
 
-    const employee = await createEmployee.execute({
+    const user = await createUser.execute({
       name,
       email,
       password,
       cellphone,
     });
 
-    return response.json(employee);
+    return response.json(user);
   }
 
   public async show(request: Request, response: Response): Promise<Response> {

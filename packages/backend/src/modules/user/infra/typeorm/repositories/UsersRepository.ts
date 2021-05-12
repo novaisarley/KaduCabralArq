@@ -11,6 +11,12 @@ class UsersRepository implements IUsersRepository {
     this.ormRepository = getRepository(User);
   }
 
+  public async findByID(user_id: string): Promise<User | undefined> {
+    const user = await this.ormRepository.findOne(user_id);
+
+    return user;
+  }
+
   public async findByCellphone(cellphone: string): Promise<User | undefined> {
     const user = await this.ormRepository.findOne({ where: { cellphone } });
 

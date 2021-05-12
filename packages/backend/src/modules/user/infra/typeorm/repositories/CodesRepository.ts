@@ -16,6 +16,10 @@ class CodesRepository implements ICodesRepository {
       relations: ['user'],
     });
 
+    if (!code) return code;
+
+    code.user.wallet = Number(code?.user.wallet);
+
     return code;
   }
 

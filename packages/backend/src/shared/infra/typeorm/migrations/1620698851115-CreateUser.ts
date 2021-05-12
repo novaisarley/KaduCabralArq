@@ -30,7 +30,7 @@ export class CreateUser1620698851115 implements MigrationInterface {
           },
           {
             name: 'wallet',
-            type: 'money',
+            type: 'decimal',
           },
           {
             name: 'updated_at',
