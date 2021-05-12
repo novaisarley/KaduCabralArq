@@ -30,6 +30,9 @@ export class AddValueToWalletService {
 
     await this.usersRepository.save(user);
 
+    // @ts-expect-error Security Reason
+    delete user.password;
+
     return user;
   }
 }
