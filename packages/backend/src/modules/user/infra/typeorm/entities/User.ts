@@ -26,13 +26,13 @@ class User {
   cellphone: string;
 
   @Column()
-  wallet: string;
+  wallet: number;
 
   @CreateDateColumn()
-  createdAt: Date;
+  created_at: Date;
 
   @UpdateDateColumn()
-  updatedAt: Date;
+  updated_at: Date;
 
   constructor() {
     if (!this.id) {

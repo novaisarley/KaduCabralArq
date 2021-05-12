@@ -24,7 +24,7 @@ export class Code {
   user_id: string;
 
   @OneToOne(() => User)
-  @JoinColumn({ name: 'userID' })
+  @JoinColumn({ name: 'user_id' })
   user: User;
 
   @CreateDateColumn()

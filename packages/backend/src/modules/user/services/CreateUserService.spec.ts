@@ -1,17 +1,27 @@
+import { FakeHashProvider } from '@shared/container/providers/HashProvider/fakes/FakeHashProvider';
 import { AppError } from '@shared/errors/AppError';
+import { FakeCodesRepository } from '../repositories/fakes/FakeCodesRepository';
 
 import { FakeUsersRepository } from '../repositories/fakes/FakeUsersRepository';
 import { CreateUserService } from './CreateUserService';
 
 let fakeUsersRepository: FakeUsersRepository;
+let fakeHashProvider: FakeHashProvider;
+let fakeCodesRepository: FakeCodesRepository;
 
 let createUser: CreateUserService;
 
 describe('CreateUserService', () => {
   beforeEach(() => {
     fakeUsersRepository = new FakeUsersRepository();
+    fakeHashProvider = new FakeHashProvider();
+    fakeCodesRepository = new FakeCodesRepository();
 
-    createUser = new CreateUserService(fakeUsersRepository);
+    createUser = new CreateUserService(
+      fakeUsersRepository,
+      fakeCodesRepository,
+      fakeHashProvider,
+    );
   });
 
   it('should be able to create a new user', async () => {
@@ -20,7 +30,6 @@ describe('CreateUserService', () => {
       email: 'johndoe@example.com',
       password: '123456',
       cellphone: '+5599999999999',
-      wallet: 0.0,
     });
 
     expect(user.name).toBe('John Doe');
@@ -33,7 +42,6 @@ describe('CreateUserService', () => {
       email: 'johndoe@example.com',
       password: '123456',
       cellphone: '+5599999999999',
-      wallet: 0.0,
     });
 
     await expect(
@@ -42,7 +50,6 @@ describe('CreateUserService', () => {
         email: 'johndoe@example.com',
         password: '123456',
         cellphone: '+5588888888888',
-        wallet: 0.0,
       }),
     ).rejects.toBeInstanceOf(AppError);
   });
@@ -53,7 +60,6 @@ describe('CreateUserService', () => {
       email: 'johndoe@example.com',
       password: '123456',
       cellphone: '+5599999999999',
-      wallet: 0.0,
     });
 
     await expect(
@@ -62,7 +68,6 @@ describe('CreateUserService', () => {
         email: 'jonnydoe@example.com',
         password: '123456',
         cellphone: '+5599999999999',
-        wallet: 0.0,
       }),
     ).rejects.toBeInstanceOf(AppError);
   });
