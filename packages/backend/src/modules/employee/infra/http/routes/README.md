@@ -4,7 +4,7 @@
 
 - **URL**
 
-  `/employees`
+  `/employee`
 
 - **Method**
 
@@ -31,7 +31,9 @@
 - **Success Response:**
 
   - **Code:** 200
+
     **Content:**
+
     ```json
     {
       "id": "6d28203b-1a90-4e12-8618-a91a9f223b8d",
@@ -46,7 +48,9 @@
 - **Error Response:**
 
   - **Code:** 400 BAD REQUEST
+
     **Content:**
+
     ```json
     {
       "status": "error",
