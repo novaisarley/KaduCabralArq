@@ -10,6 +10,15 @@ class CodesRepository implements ICodesRepository {
     this.ormRepository = getRepository(Code);
   }
 
+  public async findByValue(value: string): Promise<Code | undefined> {
+    const code = await this.ormRepository.findOne({
+      where: { value },
+      relations: ['user'],
+    });
+
+    return code;
+  }
+
   public async generateCode(payload: string, user_id: string): Promise<Code> {
     const code = this.ormRepository.create({
       value: payload,

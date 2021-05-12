@@ -6,6 +6,8 @@ const userRouter = Router();
 
 const usersController = new UsersController();
 
+userRouter.get('/:code', usersController.show);
+
 userRouter.post('/', usersController.create);
 
 export { userRouter };
