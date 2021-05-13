@@ -1,5 +1,7 @@
 import 'reflect-metadata';
 
+import * as dotenv from 'dotenv';
+
 import express from 'express';
 import cors from 'cors';
 import 'express-async-errors';
@@ -10,6 +12,8 @@ import { routes } from './routes';
 
 import '@shared/infra/typeorm';
 import '@shared/container';
+
+dotenv.config();
 
 const app = express();
 
@@ -23,4 +27,4 @@ app.use(routes);
 app.use(exceptionHandler);
 
 // eslint-disable-next-line no-console
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));

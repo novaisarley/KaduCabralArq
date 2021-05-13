@@ -32,7 +32,6 @@ export class FakeUsersRepository implements IUsersRepository {
     wallet,
   }: ICreateUserDTO): Promise<User> {
     const user = new User();
-
     Object.assign(user, { name, email, password, cellphone, wallet });
 
     this.users.push(user);

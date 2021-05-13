@@ -1,3 +1,5 @@
+import { ensureAuthentication } from '@shared/infra/http/middlewares/EnsureAuthentication';
+import { ensureIsEmployee } from '@shared/infra/http/middlewares/EnsureIsEmployee';
 import { Router } from 'express';
 
 import { UsersController } from '../controllers/UsersController';
@@ -8,10 +10,20 @@ const userRouter = Router();
 const usersController = new UsersController();
 const usersWalletController = new UsersWalletController();
 
-userRouter.get('/:code', usersController.show);
-
 userRouter.post('/', usersController.create);
 
-userRouter.patch('/:id', usersWalletController.update);
+userRouter.get(
+  '/:code',
+  ensureAuthentication,
+  ensureIsEmployee,
+  usersController.show,
+);
+
+userRouter.patch(
+  '/wallet/:id',
+  ensureAuthentication,
+  ensureIsEmployee,
+  usersWalletController.update,
+);
 
 export { userRouter };
