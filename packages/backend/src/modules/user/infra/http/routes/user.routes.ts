@@ -19,6 +19,12 @@ userRouter.get(
   usersController.show,
 );
 
+// userRouter.get(
+//   '/wallet',
+//   //  ensureAuthentication,
+//   usersWalletController.show,
+// );
+
 userRouter.patch(
   '/wallet/:id',
   ensureAuthentication,

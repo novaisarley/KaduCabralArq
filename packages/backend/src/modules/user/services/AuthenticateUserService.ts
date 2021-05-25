@@ -32,6 +32,8 @@ class AuthenticateUserService {
 
     if (!user) throw new AppError('Invalid email or password', 401);
 
+    user.wallet = Number(user.wallet);
+
     const hasPasswordMatched = await this.hashProvider.compareHash(
       password,
       user.password,
