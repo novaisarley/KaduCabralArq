@@ -14,7 +14,7 @@ export class ShowUserWalletService {
   public async execute(user_id: string): Promise<number> {
     const user = await this.usersRepository.findByID(user_id);
 
-    if (!user) throw new AppError('User not found', 404);
+    if (!user) throw new AppError('User does not exists', 404);
 
     const user_wallet = Number(user.wallet);
 

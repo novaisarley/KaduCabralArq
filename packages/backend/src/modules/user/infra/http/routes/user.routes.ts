@@ -3,12 +3,10 @@ import { ensureIsEmployee } from '@shared/infra/http/middlewares/EnsureIsEmploye
 import { Router } from 'express';
 
 import { UsersController } from '../controllers/UsersController';
-import { UsersWalletController } from '../controllers/UserWalletController';
 
 const userRouter = Router();
 
 const usersController = new UsersController();
-const usersWalletController = new UsersWalletController();
 
 userRouter.post('/', usersController.create);
 
@@ -17,19 +15,6 @@ userRouter.get(
   ensureAuthentication,
   ensureIsEmployee,
   usersController.show,
-);
-
-// userRouter.get(
-//   '/wallet',
-//   //  ensureAuthentication,
-//   usersWalletController.show,
-// );
-
-userRouter.patch(
-  '/wallet/:id',
-  ensureAuthentication,
-  ensureIsEmployee,
-  usersWalletController.update,
 );
 
 export { userRouter };
